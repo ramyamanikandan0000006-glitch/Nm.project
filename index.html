@@ -2,25 +2,125 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Nm.project</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Digital portfolio </title>
+  
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<!DOCTYPE html>
+!DOCTYPE html>
 
 <html lang="en">
 
 <head>
 
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>M.Ramya | Portfolio</title>
+  <title>M.Ramya — Software Engineering</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portfolio of M.Ramya, Software Engineering." />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+  <style>
+
+    :root{
+
+      --bg: #0f1220;
+
+      --panel:#151a2c;
+
+      --text:#e9ecf1;
+
+      --muted:#a9b0c3;
+
+      --brand:#6aa6ff;
+
+      --brand-2:#8b5cf6;
+
+      --ring: 0 0 0 3px rgba(106,166,255,.25);
+
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+
+      --radius: 16px;
+
+    }
+
+    *{box-sizing:border-box}
+
+    html,body{margin:0;height:100%;scroll-behavior:smooth;background:radial-gradient(1200px 700px at 20% -10%, rgba(138,92,246,.25), transparent 60%), radial-gradient(1000px 600px at 120% 10%, rgba(106,166,255,.20), transparent 55%), var(--bg); color:var(--text); font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";}
+
+    a{color:var(--brand); text-decoration:none}
+
+    a:hover{text-decoration:underline}
+
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px); background:linear-gradient(to bottom, rgba(15,18,32,.9), rgba(15,18,32,.65)); border-bottom:1px solid rgba(255,255,255,.06); z-index:50}
+
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
+
+    .avatar{inline-size:40px; block-size:40px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; color:white; font-weight:800}
+
+    .links a{margin-left:16px; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.08)}
+
+    .links a:hover{box-shadow:var(--ring)}
+
+    .hero{display:grid; grid-template-columns: 1.1fr .9fr; gap:30px; align-items:center; padding:64px 0}
+
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow)}
+
+    h1{font-size:clamp(28px, 4.6vw, 52px); line-height:1.1; margin:0 0 12px}
+
+    .subtitle{font-size:clamp(16px, 2.2vw, 20px); color:var(--muted)}
+
+    .badge{display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,.1); padding:8px 12px; border-radius:999px; margin-top:18px; background:rgba(255,255,255,.03)}
+
+    .cta{display:flex; gap:12px; margin-top:22px}
+
+    .btn{padding:12px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.1); background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; font-weight:600}
+
+    .btn.secondary{background:transparent; color:var(--text)}
+
+    .panel{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
+
+    section{padding:24px 0}
+
+    .grid{display:grid; gap:18px}
+
+    .grid.skills{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+
+    .tag{display:inline-block; padding:8px 10px; border-radius:10px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03); font-size:14px; margin:6px 6px 0 0}
+
+    .projects{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:18px; transition:transform .2s ease, box-shadow .2s ease}
+
+    .card:hover{transform:translateY(-4px); box-shadow:0 14px 40px rgba(0,0,0,.45)}
+
+    .card h3{margin:6px 0 8px}
+
+    .meta{color:var(--muted); font-size:14px}
+
+    .contact form{display:grid; gap:12px; margin-top:8px}
+
+    input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); color:var(--text)}
+
+    input:focus, textarea:focus{outline:none; box-shadow:var(--ring)}
+
+    footer{padding:28px 0; color:var(--muted); text-align:center; border-top:1px solid rgba(255,255,255,.06); margin-top:40px}
+
+    @media (max-width: 860px){
+
+      .hero{grid-template-columns:1fr}
+
+    }
+
+  </style>
 
 </head>
 
@@ -28,83 +128,259 @@
 
   <header>
 
-    <div class="profile">
+    <div class="container">
 
-      <img src="https://i.pravatar.cc/150?img=47" alt="Ramya" class="profile-img"/>
+      <nav aria-label="Primary">
 
-      <h1>Ramya</h1>
+        <div class="brand">
 
-      <p>data analyst  | HTML | CSS | JavaScript</p>
+          <div class="avatar" aria-hidden="true">MR</div>
+
+          <span>M.Ramya</span>
+
+        </div>
+
+        <div class="links">
+
+          <a href="#about">About</a>
+
+          <a href="#skills">Skills</a>
+
+          <a href="#projects">Projects</a>
+
+          <a href="#contact">Contact</a>
+
+        </div>
+
+      </nav>
 
     </div>
 
   </header>
 
-  <main>
+  <main class="container">
 
-    <section class="about">
+    <!-- HERO -->
 
-      <h2>About Me</h2>
+    <section class="hero" id="home" aria-label="Introduction">
 
-      <p>I'm Ramya , “A Data Analyst is someone who collects, organizes, and studies data to provide insights that help businesses and organizations make better decisions.”
+      <div class="hero-card">
 
-.</p>
+        <h1>Hi, I’m <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">M.Ramya</span></h1>
+
+        <p class="subtitle">I work in <strong>Software Engineering</strong>, building reliable, user-friendly applications and tools.</p>
+
+        <div class="badge" aria-label="Current focus">
+
+          <span>🚀</span> Shipping clean, maintainable code
+
+        </div>
+
+        <div class="cta">
+
+          <a class="btn" href="#projects">View Projects</a>
+
+          <a class="btn secondary" href="#contact" style="border-color:rgba(255,255,255,.2)">Contact Me</a>
+
+        </div>
+
+      </div>
+
+      <div class="panel" role="img" aria-label="Decorative code preview">
+
+<pre style="margin:0; overflow:auto"><code>// hello.ts
+
+type Greeting = { from: string; role: string; };
+
+export function hello(): Greeting {
+
+  return { from: "M.Ramya", role: "Software Engineering" };
+
+}
+
+console.log(hello());
+
+</code></pre>
+
+      </div>
 
     </section>
 
-E
+    <!-- ABOUT -->
 
-    <section class="projects">
+    <section id="about" aria-labelledby="about-title">
 
-      <h2>Projects</h2>
+      <h2 id="about-title">About</h2>
 
-      <div class="project-card">
+      <div class="panel">
 
-        <h3>Personal Blog</h3>
+        <p>
 
-        <p>A responsive blog site built using HTML, CSS, and JavaScript.</p>
+          I’m a problem-solver who loves turning ideas into intuitive software.
 
-        <a href="https://github.com/vinodhini/personal-blog" target="_blank">View on GitHub</a>
+          From front-end polish to back-end robustness, I focus on performance,
 
-      </div>
+          accessibility, and developer experience.
 
-      <div class="project-card">
+        </p>
 
-        <h3>Weather Dashboard</h3>
-
-        <p>Displays current weather using OpenWeatherMap API with search functionality.</p>
-
-        <a href="https://github.com/vinodhini/weather-dashboard" target="_blank">View on GitHub</a>
-
-      </div>
-
-      <div class="project-card">
-
-        <h3>To-Do App</h3>
-
-        <p>A simple and clean to-do list app with local storage support.</p>
-
-        <a href="https://github.com/vinodhini/todo-app" target="_blank">View on GitHub</a>
+        <p class="meta">Location: 🌍 Open to remote & hybrid · Availability: 📬 Reach out below</p>
 
       </div>
 
     </section>
 
-    <section class="contact">
+    <!-- SKILLS -->
 
-      <h2>Contact Me</h2>
+    <section id="skills" aria-labelledby="skills-title">
 
-      <form id="contactForm">
+      <h2 id="skills-title">Skills</h2>
 
-        <input type="text" placeholder="Your Name" required />
+      <div class="grid skills">
 
-        <input type="email" placeholder="Your Email" required />
+        <div class="panel">
 
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+          <h3>Core</h3>
 
-        <button type="submit">Send Message</button>
+          <span class="tag">JavaScript / TypeScript</span>
 
-      </form>
+          <span class="tag">HTML5</span>
+
+          <span class="tag">CSS3</span>
+
+          <span class="tag">React</span>
+
+          <span class="tag">Node.js</span>
+
+        </div>
+
+        <div class="panel">
+
+          <h3>Tools</h3>
+
+          <span class="tag">Git & GitHub</span>
+
+          <span class="tag">REST APIs</span>
+
+          <span class="tag">SQL</span>
+
+          <span class="tag">Testing</span>
+
+          <span class="tag">CI/CD</span>
+
+        </div>
+
+        <div class="panel">
+
+          <h3>Soft</h3>
+
+          <span class="tag">Problem Solving</span>
+
+          <span class="tag">Collaboration</span>
+
+          <span class="tag">Communication</span>
+
+          <span class="tag">Ownership</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects" aria-labelledby="projects-title">
+
+      <h2 id="projects-title">Projects</h2>
+
+      <div class="grid projects">
+
+        <article class="card" aria-labelledby="p1">
+
+          <h3 id="p1">TaskFlow</h3>
+
+          <p class="meta">React · Node.js · MongoDB</p>
+
+          <p>A lightweight task manager with real-time updates and offline support.</p>
+
+          <p><a href="#" aria-label="View TaskFlow repository">View code →</a></p>
+
+        </article>
+
+        <article class="card" aria-labelledby="p2">
+
+          <h3 id="p2">ShopSense</h3>
+
+          <p class="meta">Next.js · Stripe · Postgres</p>
+
+          <p>E-commerce starter focused on accessibility, performance, and DX.</p>
+
+          <p><a href="#" aria-label="View ShopSense demo">Live demo →</a></p>
+
+        </article>
+
+        <article class="card" aria-labelledby="p3">
+
+          <h3 id="p3">DataCanvas</h3>
+
+          <p class="meta">Python · FastAPI</p>
+
+          <p>API for fast data exploration with caching and typed contracts.</p>
+
+          <p><a href="#" aria-label="View DataCanvas repository">View code →</a></p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" aria-labelledby="contact-title" class="contact">
+
+      <h2 id="contact-title">Contact</h2>
+
+      <div class="panel">
+
+        <form onsubmit="event.preventDefault(); alert('Thanks, I will get back to you soon!');" aria-label="Contact form">
+
+          <label>
+
+            <span>Name</span>
+
+            <input required type="text" name="name" placeholder="Your name" />
+
+          </label>
+
+          <label>
+
+            <span>Email</span>
+
+            <input required type="email" name="email" placeholder="you@example.com" />
+
+          </label>
+
+          <label>
+
+            <span>Message</span>
+
+            <textarea required name="message" rows="4" placeholder="How can I help?"></textarea>
+
+          </label>
+
+          <button class="btn" type="submit">Send Message</button>
+
+        </form>
+
+        <p class="meta" style="margin-top:10px">
+
+          Prefer email? <a href="mailto:hello@example.com">hello@example.com</a>
+
+        </p>
+
+      </div>
 
     </section>
 
@@ -112,17 +388,28 @@ E
 
   <footer>
 
-    <p>© 2025 Ramya. All rights reserved.</p>
+    <div class="container">
+
+      © <span id="year"></span> M.Ramya — Software Engineering
+
+    </div>
 
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+
+    // Set current year in footer
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
 
 </body>
 
 </html>
-<!-- partial -->
-  <script  src="./script.js"></script>
 
+Want this adapted to a specific
+<!-- partial -->
+  
 </body>
 </html>
